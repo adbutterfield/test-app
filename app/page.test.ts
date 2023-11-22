@@ -9,3 +9,13 @@ test("test something", async () => {
 
   expect(screen.getByTestId("status")).toHaveTextContent("clicked");
 });
+
+test("test form button submit", async () => {
+  const { user } = renderApp();
+
+  expect(screen.getByTestId("status")).toHaveTextContent("not clicked");
+
+  await user.click(screen.getByText("submit"));
+
+  expect(screen.getByTestId("status")).toHaveTextContent("clicked");
+});
