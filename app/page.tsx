@@ -27,6 +27,15 @@ export default function Home() {
           submit
         </button>
       </form>
+      <form>
+        <button
+          data-testid="click"
+          type="submit"
+          onClick={() => setClickedStatus("clicked")}
+        >
+          click
+        </button>
+      </form>
     </main>
   );
 }

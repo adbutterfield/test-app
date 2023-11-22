@@ -19,3 +19,13 @@ test("test form button submit", async () => {
 
   expect(screen.getByTestId("status")).toHaveTextContent("clicked");
 });
+
+test("test form button click", async () => {
+  const { user } = renderApp();
+
+  expect(screen.getByTestId("status")).toHaveTextContent("not clicked");
+
+  await user.click(screen.getByText("click"));
+
+  expect(screen.getByTestId("status")).toHaveTextContent("clicked");
+});
